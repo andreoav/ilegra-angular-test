@@ -6,12 +6,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MoviesListComponent } from './movies/movies-list/movies-list.component';
 import { MovieItemComponent } from './movies/movie-item/movie-item.component';
+import { LoadingComponent } from './ui/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesListComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
