@@ -1,9 +1,13 @@
 export class Movie {
-  protected name: string;
-  protected description: string;
+  public title: string;
+  public episode_id: string;
+  public opening_crawl: string;
+  public director: string;
+  public producer: string;
+  public release_data: string;
 
-  constructor(name: string, description: string) {
-    this.name = name;
-    this.description = description;
-  }
+  // constructor(name: string, description: string) {
+  //   this.name = name;
+  //   this.description = description;
+  // }
 }

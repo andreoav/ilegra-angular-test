@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
+
 import { Movie } from './movies/movie.model';
+import { MovieService } from './movies/movie.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +12,11 @@ import { Movie } from './movies/movie.model';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  movies: Movie[];
+  movies: any[];
 
   loadingMovies: boolean = false;
+
+  constructor(private movieService: MovieService) {}
 
   ngOnInit() {
     this.loadMovies();
@@ -19,18 +24,13 @@ export class AppComponent implements OnInit {
 
   loadMovies() {
     this.setLoading(true);
-
-    setTimeout(() => {
-      this.movies = [
-        new Movie('Interestelar', 'Good Movie'),
-        new Movie('IT (2017)', 'Awesome Movie'),
-        new Movie('Central do Brazil 1', 'Awesome Movie'),
-        new Movie('Central do Brazil 2', 'Awesome Movie'),
-        new Movie('Central do Brazil 3', 'Awesome Movie'),
-      ];
-
-      this.setLoading(false);
-    }, 2500);
+    this.movieService.getMovies().subscribe(
+      (response: Response) => {
+        this.movies = response.json().results;
+        this.setLoading(false);
+      },
+      (error) => console.log(error)
+    );
   }
 
   setLoading(loading: boolean) {

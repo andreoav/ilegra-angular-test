@@ -1,3 +1,18 @@
-<p>
-  movie-item works!
-</p>
+<div class="Movie card">
+  <img class="card-img-top" [src]="'http://facetheforce.today/random/350?r=' + movie.episode_id" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">{{ movie.title }}</h4>
+    <p class="card-text">{{ movie.opening_crawl }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Released:</strong> {{ movie.release_date }}
+    </li>
+    <li class="list-group-item">
+      <strong>Director:</strong> {{ movie.director }}
+    </li>
+    <li class="list-group-item">
+      <strong>Producer</strong> {{ movie.producer }}
+    </li>
+  </ul>
+</div>
