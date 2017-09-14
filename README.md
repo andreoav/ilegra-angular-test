@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
+## Install Angular CLI
+
+Run `npm i -g @angular/cli` to install Angular CLI (needed for `ng` command)
+
 ## Install Dependencies
 
 Run `yarn` to install all the required libraries.
